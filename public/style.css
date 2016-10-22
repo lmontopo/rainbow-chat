@@ -1,0 +1,45 @@
+.bubble {
+  float: left;
+  max-width: 80%;
+  width: 80%;
+  position: relative;
+  clear: both;
+  background: #95c2fd;
+  padding: 0.5em 1em;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  font-size: 1em;
+  margin-top: 30px;
+}
+
+.bubble:after {
+  border-radius: 20px / 5px;
+  content: '';
+  display: block;
+  position: absolute;
+  border: 8px solid transparent;
+  bottom: 1px;
+  border-bottom-color: rgb(149, 194, 253);
+  transform: rotateZ(-90deg);
+  left: -15px;
+}
+
+.bubble-alt {
+  float: right;
+}
+
+.bubble-alt:after {
+  left: auto;
+  transform: rotateZ(90deg);
+  right: -16px;
+}
+
+.chat-container{
+
+}
+
+.mdl-list__item-avatar {
+        margin-right: 16px;
+        margin-left: 16px;
+      }

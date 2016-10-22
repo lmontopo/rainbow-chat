@@ -43,3 +43,8 @@
         margin-right: 16px;
         margin-left: 16px;
       }
+
+.mdl-card__title {
+    text-align: center;
+    display: block;
+}

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- let's consider copying liberally from this example https://codepen.io/blaketarter/pen/emWbYm -->
 <html>
   <head>
     <meta charset="utf-8">
@@ -15,6 +14,44 @@
         margin-right: 16px; 
         margin-left: 16px;
       }
+
+.bubble {
+  float: left;
+  width: auto;
+  max-width: 80%;
+  position: relative;
+  clear: both;
+  background: #95c2fd;
+  padding: 0.5em 1em;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  font-size: 1em;
+  margin-top: 30px;
+}
+
+.bubble:after {
+  border-radius: 20px / 5px;
+  content: '';
+  display: block;
+  position: absolute;
+  border: 8px solid transparent;
+  bottom: 1px;
+  border-bottom-color: rgb(149, 194, 253);
+  transform: rotateZ(-90deg);
+  left: -15px;
+}
+
+.bubble-alt {
+  float: right;
+}
+
+.bubble-alt:after {
+  left: auto;
+  transform: rotateZ(90deg);
+  right: -16px;
+}
+
     </style>
   </head>
   <body>
@@ -24,9 +61,10 @@
       <div class="mdl-layout__header-row">
         <span class="mdl-layout-title">Welcome to Rainbow.Chat - Be kind</span>
          <div class="mdl-layout-spacer"></div>
-         <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+         <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="panic">
           <i class="material-icons">visibility_off</i>
          </button>
+         <span for="panic" class="mdl-tooltip">Panic Button Exits Chat Fast</span>
       </div>
      </header>
       
@@ -38,12 +76,20 @@
            <div class="mdl-list__item">
              <span class="mdl-list__item-primary-content">
                 <i class="material-icons mdl-list__item-avatar">person</i>
-                <span>Pflag Volunteer</span>
+                <span>Pflag</span>
              </span>
+           <div class="bubble">
+               <p>
+                 How are you doing today? Is there anything in particular you want to talk about?
+               </p>
+           </div>
            </div>
 
          <div class="mdl-list__item">
           <span class="mdl-list__item-primary-content">
+          <div class="bubble bubble-alt">
+            <p> I want to tell my parents about who I really am, but I can never get it to come out right. I don't want them to hate me... </p>
+          </div>
             <div class="mdl-layout-spacer"></div>
             <span>Anon</span>
             <i class="material-icons mdl-list__item-avatar">person</i>
@@ -53,8 +99,14 @@
          <div class="mdl-list__item">
           <span class="mdl-list__item-primary-content">
            <i class="material-icons mdl-list__item-avatar">person</i>
-           <span>Pflag Volunteer</span>
+           <span>Pflag</span>
           </span>
+           <div class="bubble">
+               <p>
+                 You're not alone. I had trouble being honest with my parents too. What happened the last time you tried to talk to them?
+               </p>
+           </div>
+
          </div>
         </div>
 
@@ -70,6 +122,8 @@
          <div class="mdl-cell mdl-cell--middle mdl-cell--stretch mdl-cell--1-col">
          <button class="mdl-button mdl-button--fab mdl-button--accent mdl-js-button mdl-js-ripple-effect">
           <i class="material-icons">send</i>
+<!-- <i class="material-icons">chat</i> also looks good, but defies convention a little. -->
+
          </button>
          </div>
          </form>

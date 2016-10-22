@@ -3,6 +3,8 @@ from flask_socketio import SocketIO
 
 socketio = SocketIO()
 
+ROOMS = []
+
 
 def create_app(debug=False):
     """Create an application."""

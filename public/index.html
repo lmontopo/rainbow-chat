@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- let's consider copying liberally from this example https://codepen.io/blaketarter/pen/emWbYm -->
 <html>
   <head>
     <meta charset="utf-8">
@@ -9,7 +10,12 @@
     <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
     <title>Rainbow.Chat Mockups</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+      .mdl-list__item-avatar {
+        margin-right: 16px; 
+        margin-left: 16px;
+      }
+    </style>
   </head>
   <body>
    <container>    
@@ -27,29 +33,34 @@
       <main class="mdl-layout__content">
       <div class="page-content">
         <messages class="mdl-grid">
-         <div class="mdl-list mdl-cell mdl-cell--10-col">
+         <div class="mdl-list mdl-cell mdl-cell--12-col">
+
            <div class="mdl-list__item">
              <span class="mdl-list__item-primary-content">
                 <i class="material-icons mdl-list__item-avatar">person</i>
-              <span>Pflag Volunteer</span>
+                <span>Pflag Volunteer</span>
              </span>
            </div>
-  <div class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <i class="material-icons mdl-list__item-avatar">person</i>
-      <span>Anon</span>
-    </span>
-   </div>
-  <div class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <i class="material-icons mdl-list__item-avatar">person</i>
-      <span>Pflag Volunteer</span>
-    </span>
-    <span class="mdl-list__item-secondary-content">
-  </span>
-  </div>
-</div>
+
+         <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <div class="mdl-layout-spacer"></div>
+            <span>Anon</span>
+            <i class="material-icons mdl-list__item-avatar">person</i>
+          </span>
+         </div>
+
+         <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+           <i class="material-icons mdl-list__item-avatar">person</i>
+           <span>Pflag Volunteer</span>
+          </span>
+         </div>
+        </div>
+
         </messages>
+
+
         <sendzone>
          <form class="mdl-grid" action="#">
           <div class="mdl-cell mdl-cell--11-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -58,7 +69,7 @@
           </div>
          <div class="mdl-cell mdl-cell--1-col">
          <button class="mdl-button mdl-button--fab mdl-button--icon mdl-button--accent mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">chat</i>
+          <i class="material-icons">send</i>
          </button>
          </div>
          </form>

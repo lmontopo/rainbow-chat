@@ -1,12 +1,12 @@
 from flask import session, redirect, url_for, render_template, request
 from . import main
-from .forms import LoginForm
+from .forms import EnterChatroom
 
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
     """"Login form to enter a room."""
-    form = LoginForm()
+    form = EnterChatroom()
     if form.validate_on_submit():
         session['name'] = 'Anonymous'
         session['room'] = 1

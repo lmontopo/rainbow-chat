@@ -32,7 +32,7 @@
 .bubble-alt:after {
   left: auto;
   transform: rotateZ(90deg);
-  right: -16px;
+  right: -15px;
 }
 
 .chat-container{
@@ -43,3 +43,8 @@
         margin-right: 16px;
         margin-left: 16px;
       }
+
+.mdl-card__title {
+    text-align: center;
+    display: block;
+}

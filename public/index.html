@@ -15,10 +15,14 @@
         margin-left: 16px;
       }
 
+.chat-container{
+
+}
+
 .bubble {
   float: left;
-  width: auto;
   max-width: 80%;
+  width: 80%;
   position: relative;
   clear: both;
   background: #95c2fd;
@@ -51,7 +55,6 @@
   transform: rotateZ(90deg);
   right: -16px;
 }
-
     </style>
   </head>
   <body>
@@ -71,7 +74,7 @@
       <main class="mdl-layout__content">
       <div class="page-content">
         <messages class="mdl-grid">
-         <div class="mdl-list mdl-cell mdl-cell--12-col">
+         <div class="mdl-list mdl-cell mdl-cell--12-col chat-container">
 
            <div class="mdl-list__item">
              <span class="mdl-list__item-primary-content">
@@ -106,10 +109,46 @@
                  You're not alone. I had trouble being honest with my parents too. What happened the last time you tried to talk to them?
                </p>
            </div>
-
          </div>
-        </div>
 
+         <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+          <div class="bubble bubble-alt">
+            <p>It didn't come out right and they scolded me for 'telling bad jokes'.</p>
+          </div>
+            <div class="mdl-layout-spacer"></div>
+            <span>Anon</span>
+            <i class="material-icons mdl-list__item-avatar">person</i>
+          </span>
+         </div>
+
+           <div class="mdl-list__item">
+             <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-avatar">person</i>
+                <span>Pflag</span>
+             </span>
+           <div class="bubble">
+               <p>
+                 I'm sorry that happened to you. It DOES get better! Please believe me that it gets better. My grandfather disowned me when I finally came out, and it took him three years before he would talk to me again. Everyone has come around though! So even if it feels impossible, and even if it may take some time, you have to believe me that it will get better and you have an amazing life ahead of you that they can't take away.
+               </p>
+           </div>
+           </div>
+
+          <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+          <div class="bubble bubble-alt">
+            <p>Thanks. It's hard to remember sometimes.</p>
+          </div>
+            <div class="mdl-layout-spacer"></div>
+            <span>Anon</span>
+            <i class="material-icons mdl-list__item-avatar">person</i>
+          </span>
+         </div>
+
+
+
+
+        </div>
         </messages>
 
 

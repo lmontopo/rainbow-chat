@@ -7,42 +7,33 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
     <title>Rainbow.Chat Mockups</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
    <container>    
-
-    <h1>Hello Rainbow.Chat!</h1>
-
-    <p>
-      This is a simple plain-HTML website on GitLab Pages, without any fancy static site generator.
-    </p>
-
-    <section>
-      <blurb class="mdl-card mdl-shadow--2dp">
-       <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text"> Blurb! Zesty! </h2>
-       </div>
-        <div class="mdl-card__supporting-text">
-          Please be compassionate and careful not to expose any personally identifiable information.
-        </div>
-        <div class="mdl-card__menu">
+   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Welcome to Rainbow.Chat - Be kind</span>
+         <div class="mdl-layout-spacer"></div>
          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
           <i class="material-icons">visibility_off</i>
          </button>
-        </div>
-      </blurb>
+      </div>
+     </header>
       
-      <chatbox>
-        <messages>
-<div class="demo-list-action mdl-list">
-  <div class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <i class="material-icons mdl-list__item-avatar">person</i>
-      <span>Pflag Volunteer</span>
-    </span>
-  </div>
+      <main class="mdl-layout__content">
+      <div class="page-content">
+        <messages class="mdl-grid">
+         <div class="mdl-list mdl-cell mdl-cell--10-col">
+           <div class="mdl-list__item">
+             <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-avatar">person</i>
+              <span>Pflag Volunteer</span>
+             </span>
+           </div>
   <div class="mdl-list__item">
     <span class="mdl-list__item-primary-content">
       <i class="material-icons mdl-list__item-avatar">person</i>
@@ -60,18 +51,21 @@
 </div>
         </messages>
         <sendzone>
-         <form action="#">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-           <input class="mdl-textfield__input" type="text" id="sample3">
-           <label class="mdl-textfield__label" for="sample3">Enter a message...</label>
+         <form class="mdl-grid" action="#">
+          <div class="mdl-cell mdl-cell--11-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input class="mdl-textfield__input" type="text" id="chatmessage">
+           <label class="mdl-textfield__label" for="chatmessage">Enter a message...</label>
           </div>
+         <div class="mdl-cell mdl-cell--1-col">
+         <button class="mdl-button mdl-button--fab mdl-button--icon mdl-button--accent mdl-js-button mdl-js-ripple-effect">
+          <i class="material-icons">chat</i>
+         </button>
+         </div>
          </form>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-          Send
-        </button>
         </sendzone>
-      </chatbox>
-    </section>
+      </div>
+      </main>
+   </div>
    </container>
   </body>
 </html>

@@ -32,7 +32,7 @@
 .bubble-alt:after {
   left: auto;
   transform: rotateZ(90deg);
-  right: -16px;
+  right: -15px;
 }
 
 .chat-container{

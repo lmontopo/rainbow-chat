@@ -111,8 +111,6 @@
     <h1 class="room_names" id={{ room }}>Flask-SocketIO-Chat: {{ room }}</h1>
     <main class="mdl-layout__content" id="scrollerson">
     <messages class="mdl-grid" id ={{ chat_room|join}}>
-      {% set chat_room = ["chat", room ] %}
-      <textarea id={{ chat_room|join }} cols="80" rows="20"></textarea><br><br>
         <div class="mdl-list mdl-cell mdl-cell--12-col chat-container">
         </div>
       </messages>

@@ -25,6 +25,7 @@
                 });
                 socket.on('status', function(data) {
                   console.log('pickle', data);
+        
                     //$('#chat').val($('#chat').val() + '<' + data.msg + '>\n');
                     //$('#chat').scrollTop($('#chat')[0].scrollHeight);
                 });
@@ -32,6 +33,35 @@
                     console.log('adoifuadscciofuaoisfuiodsauf')
 
                     console.log(data);
+                  var msg = data.msg;
+                  var name = data.name;
+                  var bigPapa = document.createElement("div");
+
+                  bigPapa.className = "mdl-list__item";
+
+                  var iconElContainer = document.createElement("span");
+                  iconElContainer.className = "mdl-list__item-primary-content";
+                  var iconEl = document.createElement("i");
+                  iconEl.className="material-icons mdl-list__item-avatar";
+                  iconEl.innerHTML="person";
+                  var nameContainer = document.createElement("span");
+                  nameContainer.innerHTML = name;
+                  iconElContainer.appendChild(iconEl);
+                  iconElContainer.appendChild(nameContainer);
+
+                  bigPapa.appendChild(iconElContainer);
+
+                  var messageContainer = document.createElement("div");
+                  var message = document.createElement("p");
+                  message.innerHTML = msg;
+
+                  messageContainer.appendChild(message);
+
+                  bigPapa.appendChild(messageContainer);
+                  var itgoeshere = document.getElementById("hereitgoes");
+                  itgoeshere.appendChild(bigPapa);
+
+
                     var room = data.room;
                     var chat_id = '#chat' + room;
                     $(chat_id).val($(chat_id).val() + data.msg + '\n');
@@ -64,6 +94,7 @@
     </head>
 
   <body>
+    <div id="hereitgoes"></div>
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <!--<img class="logo grow" src="images/full-res-logo.png" alt="rainbow-chat-logo" id="logo">-->
@@ -87,27 +118,6 @@
       {% set chat_room = ["chat", room ] %}
       <textarea id={{ chat_room|join }} cols="80" rows="20"></textarea><br><br>
         <div class="mdl-list mdl-cell mdl-cell--12-col chat-container">
-          <div class="mdl-list__item">
-            <span class="mdl-list__item-primary-content">
-              <i class="material-icons mdl-list__item-avatar">person</i>
-              <span>Pflag</span>
-            </span>
-            <div class="bubble">
-              <p>
-              How are you doing today? Is there anything in particular you want to talk about?
-              </p>
-            </div>
-          </div>
-          <div class="mdl-list__item">
-            <span class="mdl-list__item-primary-content">
-              <div class="bubble bubble-alt">
-                <p> I want to tell my parents about who I really am, but I can never get it to come out right. I don't want them to hate me... </p>
-              </div>
-              <div class="mdl-layout-spacer"></div>
-              <span>Anon</span>
-              <i class="material-icons mdl-list__item-avatar">person</i>
-            </span>
-          </div>
         </div>
       </messages>
     </main>   

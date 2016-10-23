@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.amber-indigo.min.css" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../static/style.css">
   <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
   <title>Rainbow.Chat</title>
@@ -47,21 +47,32 @@
                   iconEl.innerHTML="person";
                   var nameContainer = document.createElement("span");
                   nameContainer.innerHTML = name;
-                  iconElContainer.appendChild(iconEl);
-                  iconElContainer.appendChild(nameContainer);
-
-                  bigPapa.appendChild(iconElContainer);
-
                   var messageContainer = document.createElement("div");
+                  messageContainer.className = "bubble";
                   var message = document.createElement("p");
                   message.innerHTML = msg;
-
                   messageContainer.appendChild(message);
-
-                  bigPapa.appendChild(messageContainer);
                   var itgoeshere = document.getElementById(room);
                   itgoeshere.appendChild(bigPapa);
 
+                  if (name === "Volunteer") {
+                    iconElContainer.appendChild(iconEl);
+                    iconElContainer.appendChild(nameContainer);
+                    bigPapa.appendChild(iconElContainer);
+                    bigPapa.appendChild(messageContainer);
+                  }
+                  else {
+                    var spacer = document.createElement("div");
+                    spacer.className = "mdl-layout-spacer";
+
+                    iconElContainer.appendChild(spacer);
+                    iconElContainer.appendChild(nameContainer);
+                    iconElContainer.appendChild(iconEl);
+                    messageContainer.classList.add("bubble-alt");
+                    bigPapa.appendChild(messageContainer);
+                    bigPapa.appendChild(iconElContainer);
+                  }
+                 
                 });
                 socket.on('room', function(data) {
                     room = data.msg;
@@ -92,9 +103,7 @@
   <body>
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <!--<img class="logo grow" src="images/full-res-logo.png" alt="rainbow-chat-logo" id="logo">-->
-        <img class="logo grow" src="http://raw.githubusercontent.com/lmontopo/pflag/feature/FML/full-res-logo.png"
- alt="rainbow-chat-logo" id="logo">
+        <img class="logo grow" src="../static/rc-icon.png" alt="rainbow-chat-logo" id="logo">
 
         <span class="mdl-layout-title">Welcome to Rainbow.Chat - Be kind</span>
         <div class="mdl-layout-spacer"></div>

@@ -62,10 +62,6 @@
                   var itgoeshere = document.getElementById(room);
                   itgoeshere.appendChild(bigPapa);
 
-
-                    var chat_id = '#chat' + room;
-                    $(chat_id).val($(chat_id).val() + data.msg + '\n');
-                    $(chat_id).scrollTop($(chat_id)[0].scrollHeight);
                 });
                 socket.on('room', function(data) {
                     room = data.msg;
@@ -122,11 +118,6 @@
       </messages>
     </main>   
 
-
-      {% set chat_room = ["chat", room ] %}
-      <textarea id={{ chat_room|join }} cols="80" rows="20"></textarea><br><br>
-
-      {% set text_room = ["text", room ] %}
       <input class="text" id={{ room }} size="80" placeholder="Enter your message here"><br><br>
       <a href="#" onclick="leave_room();">Leave this room</a>
     {%  endfor %}

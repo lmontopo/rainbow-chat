@@ -52,7 +52,7 @@
                   var message = document.createElement("p");
                   message.innerHTML = msg;
                   messageContainer.appendChild(message);
-                  var itgoeshere = document.getElementById(room);
+                  var itgoeshere = document.getElementById("scroll-tab-" + room);
                   itgoeshere.appendChild(bigPapa);
 
                   if (name === "Volunteer") {
@@ -130,8 +130,8 @@
         // create tab link
             var tab_link_container = document.getElementById("tab_link_container");
             var tab_link = document.createElement("a");
-            var tab_href = "#scrool-tab-" + {{ loop.index }};
-            tab_link.setAttribute('href', tab_href);
+            var tab_href = "scroll-tab-" + {{ room }};
+            tab_link.setAttribute('href', '#' + tab_href);
             tab_link.setAttribute('class', 'mdl-layout__tab is-active');
             tab_link.innerHTML = {{ room }};
             tab_link_container.appendChild(tab_link);
@@ -147,8 +147,8 @@
         // create tab link
             var tab_link_container = document.getElementById("tab_link_container");
             var tab_link = document.createElement("a");
-            var tab_href = "#scrool-tab-" + {{ loop.index }};
-            tab_link.setAttribute('href', tab_href);
+            var tab_href = "scroll-tab-" + {{ room }};
+            tab_link.setAttribute('href', '#' + tab_href);
             tab_link.setAttribute('class', 'mdl-layout__tab');
             tab_link.innerHTML = {{ room }};
             tab_link_container.appendChild(tab_link);

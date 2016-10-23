@@ -18,23 +18,28 @@ def joined(message):
     ROOMS += rooms
 
     if rooms:
-        print(rooms)
-        join_room(rooms[0])
-        join_room(rooms[1])
+        for room in rooms:
+            print(room)
+            join_room(room)
+            emit('room', {'msg': room})
+            emit('status', {'msg': session.get('name') + ' has entered the room{0}.'.format(room)}, room=room)
+
     else:
-        join_room(ROOMS.pop())
-        
-        
-    #for room in rooms:
-    #    emit('status', {'msg': session.get('name') + ' has entered the room#.'}, room=room)
+        room = ROOMS.pop()
+        join_room(room)
+        emit('room', {'msg': room})
+        emit('status', {'msg': session.get('name') + ' has entered the room {0}.'.format(room)}, room=room)
 
 
 @socketio.on('text', namespace='/chat')
-def text(message):
+def text(message, room):
     """Sent by a client when the user entered a new message.
     The message is sent to all people in the room."""
-    room = session.get('room')
-    emit('message', {'msg': session.get('name') + ':' + message['msg']}, room=room)
+    # room = session.get('room')
+
+    print '---------------------------'
+    print room
+    emit('message', {'msg': session.get('name') + ':' + message['msg']}, room=room['room'])
 
 
 @socketio.on('left', namespace='/chat')

@@ -37,11 +37,9 @@
 		<img class="animated bounceIn" id="Logo-RC" src="../static/images/full-res-logo.png" alt="Logo-Rainbow-Chat">
 	   <h3> Rainbow.Chat </h3> 
             </div>
-           <a href="volunteer_chat.html">
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" style="width:100%"> Enter Chatroom  </button> </a>
-<form method="POST">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" type="submit" form="yo" style="width:100%"> Enter Chatroom  </button> </a>
+<form method="POST" id="yo">
             {{ form.hidden_tag() }}
-            {{ form.submit() }}
         </form>
           </div>
 

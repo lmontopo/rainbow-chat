@@ -1,38 +1,34 @@
-<!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="generator" content="GitLab Pages">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.amber-indigo.min.css">
-  <link rel="stylesheet" href="style.css">
-  <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-  <title>Rainbow.Chat Mockups</title>
-</head>
-
-<body>
-  <container>
-    <div class="mdl-layout--fixed-tabs mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <head>
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.amber-indigo.min.css" />
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+     
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Simple header with scrollable tabs. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Welcome to Rainbow.Chat - Be kind</span>
-          <div class="mdl-layout-spacer"></div>
+          <!-- Title -->
+            <img class="logo-small" src="images/rc-icon.png" alt="rainbow-chat-logo" id="logo">
+          <span class="mdl-layout-title">Rainbow.Chat - Be kind</span>
         </div>
+        <!-- Tabs -->
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-          <a href="#fixed-tab-1" class="mdl-layout__tab is-active"> Conversation 1
-          </a>
-          <a href="#fixed-tab-2" class="mdl-layout__tab"> Conversation 2
-          </a>
-          <a href="#fixed-tab-3" class="mdl-layout__tab"> Conversation 3
-          </a>
+          <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Conversation 1</a>
+          <a href="#scroll-tab-2" class="mdl-layout__tab">Conversation 2</a>
+          <a href="#scroll-tab-3" class="mdl-layout__tab">Conversation 3</a>
+        
         </div>
       </header>
+      
       <main class="mdl-layout__content">
-        <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
-          <div class="page-content">
+        <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+          <div class="page-content"><!-- Your content goes here -->
             <messages class="mdl-grid">
               <div class="mdl-list mdl-cell mdl-cell--12-col chat-container">
                 <div class="mdl-list__item">
@@ -100,24 +96,10 @@
                 </div>
               </div>
             </messages>
-            <sendzone>
-              <form class="mdl-grid" action="#">
-                <div class="mdl-cell mdl-cell--11-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="chatmessage">
-                  <label class="mdl-textfield__label" for="chatmessage">Enter a message...</label>
-                </div>
-                <div class="mdl-cell mdl-cell--middle mdl-cell--stretch mdl-cell--1-col">
-                  <button class="mdl-button mdl-button--fab mdl-button--accent mdl-js-button mdl-js-ripple-effect">
-                    <i class="material-icons">send</i>
-                    <!-- <i class="material-icons">chat</i> also looks good, but defies convention a little. -->
-                  </button>
-                </div>
-              </form>
-            </sendzone>
           </div>
         </section>
-        <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-          <div class="page-content">
+        <section class="mdl-layout__tab-panel" id="scroll-tab-2">
+          <div class="page-content"><!-- Your content goes here -->
             <messages class="mdl-grid">
               <div class="mdl-list mdl-cell mdl-cell--12-col chat-container">
                 <div class="mdl-list__item">
@@ -184,30 +166,11 @@
                   </span>
                 </div>
               </div>
-            </messages>
-            <sendzone>
-              <form class="mdl-grid" action="#">
-                <div class="mdl-cell mdl-cell--11-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="chatmessage">
-                  <label class="mdl-textfield__label" for="chatmessage">Enter a message...</label>
-                </div>
-                <div class="mdl-cell mdl-cell--middle mdl-cell--stretch mdl-cell--1-col">
-                  <button class="mdl-button mdl-button--fab mdl-button--accent mdl-js-button mdl-js-ripple-effect">
-                    <i class="material-icons">send</i>
-                    <!-- <i class="material-icons">chat</i> also looks good, but defies convention a little. -->
-                  </button>
-                </div>
-              </form>
-            </sendzone>
           </div>
         </section>
-
-
-
-        <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-          <div class="page-content">
-
-          <main class="mdl-layout__content">
+        <section class="mdl-layout__tab-panel" id="scroll-tab-3">
+          <div class="page-content"><!-- Your content goes here -->
+             <main class="mdl-layout__content">
       <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--12-col" style="width:100%">
             <div class="mdl-card__title">
@@ -218,29 +181,27 @@
         </div>
       </div>
     </main>
-
-
-            <sendzone>
-              <form class="mdl-grid" action="#">
-                <div class="mdl-cell mdl-cell--11-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="chatmessage">
-                  <label class="mdl-textfield__label" for="chatmessage">Enter a message...</label>
-                </div>
-                <div class="mdl-cell mdl-cell--middle mdl-cell--stretch mdl-cell--1-col">
-                  <button class="mdl-button mdl-button--fab mdl-button--accent mdl-js-button mdl-js-ripple-effect" disabled>
-                    <i class="material-icons">send</i>
-                    <!-- <i class="material-icons">chat</i> also looks good, but defies convention a little. -->
-                  </button>
-                </div>
-              </form>
-            </sendzone>
           </div>
         </section>
-
-
+      
       </main>
-    </div>
-  </container>
-</body>
 
+      <div id="footer">
+          <sendzone>
+            <form class="mdl-grid" action="#">
+              <div class="mdl-cell mdl-cell--11-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="chatmessage">
+                <label class="mdl-textfield__label" for="chatmessage">Enter a message...</label>
+              </div>
+              <div class="mdl-cell mdl-cell--middle mdl-cell--stretch mdl-cell--1-col">
+                <button class="mdl-button mdl-button--fab mdl-button--accent mdl-js-button mdl-js-ripple-effect">
+                  <i class="material-icons">send</i>
+                  <!-- <i class="material-icons">chat</i> also looks good, but defies convention a little. -->
+                </button>
+              </div>
+            </form>
+          </sendzone>
+  </div>  
+    </div>
+  </body>
 </html>

@@ -6,30 +6,32 @@
   <meta name="generator" content="GitLab Pages">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.amber-indigo.min.css" />
   <link rel="stylesheet" href="style.css">
   <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-  <title>Rainbow.Chat Mockups</title>
+  <title>Rainbow.Chat</title>
 </head>
 
 <body>
   <container>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Welcome to Rainbow.Chat - Be kind</span>
-          <div class="mdl-layout-spacer"></div>
-          <a href="http://www.yahoo.com">
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" id="panic">
-            Leave Site Now!
-          </button>
-        </a>
-          <span for="panic" class="mdl-tooltip">Panic Button Exits Chat Fast</span>
-        </div>
-      </header>
-      <main class="mdl-layout__content">
-        <div class="page-content">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+          <div class="mdl-layout__header-row">
+
+          <img class="logo grow" src="images/full-res-logo.png" alt="rainbow-chat-logo" id="logo">
+
+            <span class="mdl-layout-title">Welcome to Rainbow.Chat - Be kind</span>
+            <div class="mdl-layout-spacer"></div>
+            <a href="http://www.yahoo.com">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="panic">
+              Leave Site Now!
+            </button>
+          </a>
+            <span for="panic" class="mdl-tooltip">Panic Button Exits Chat Fast</span>
+          </div>
+        </header>
+         <main class="mdl-layout__content" id="scrollerson">
           <messages class="mdl-grid">
             <div class="mdl-list mdl-cell mdl-cell--12-col chat-container">
               <div class="mdl-list__item">
@@ -85,6 +87,37 @@
                   </p>
                 </div>
               </div>
+
+		<div class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+          <div class="bubble bubble-alt">
+            <p> I want to tell my parents about who I really am, but I can never get it to come out right. I don't want them to hate me... </p>
+          </div>
+            <div class="mdl-layout-spacer"></div>
+            <span>Anon</span>
+                <i class="material-icons mdl-list__item-avatar">person</i>
+                </span>
+              </div>
+<div class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+          <div class="bubble bubble-alt">
+            <p> I want to tell my parents about who I really am, but I can never get it to come out right. I don't want them to hate me... </p>
+          </div>
+            <div class="mdl-layout-spacer"></div>
+            <span>Anon</span>
+                <i class="material-icons mdl-list__item-avatar">person</i>
+                </span>
+              </div>
+		<div class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+          <div class="bubble bubble-alt">
+            <p> I want to tell my parents about who I really am, but I can never get it to come out right. I don't want them to hate me... </p>
+          </div>
+            <div class="mdl-layout-spacer"></div>
+            <span>Anon</span>
+                <i class="material-icons mdl-list__item-avatar">person</i>
+                </span>
+              </div>
               <div class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
           <div class="bubble bubble-alt">
@@ -97,7 +130,9 @@
               </div>
             </div>
           </messages>
-          <div style="position-absolute">
+	  </div>
+     </main>   
+	<div id="footer">
           <sendzone>
             <form class="mdl-grid" action="#">
               <div class="mdl-cell mdl-cell--11-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -112,11 +147,16 @@
               </div>
             </form>
           </sendzone>
+	</div>	
         </div>
         </div>
-      </main>
+      
     </div>
   </container>
 </body>
-
+<script>
+document.getElementById('scrollerson').addEventListener('scroll',function(){console.log('wow scroll');
+document.getElementById('logo').setAttribute("class", "logo-small grow")
+});
+</script>
 </html>

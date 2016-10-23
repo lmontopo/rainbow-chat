@@ -94,7 +94,6 @@
     </head>
 
   <body>
-    <div id="hereitgoes"></div>
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <!--<img class="logo grow" src="images/full-res-logo.png" alt="rainbow-chat-logo" id="logo">-->
@@ -111,6 +110,7 @@
         <span for="panic" class="mdl-tooltip">Panic Button Exits Chat Fast</span>
       </div>
     </header>
+    <div id="hereitgoes"></div>
     {%  for room in rooms %}
     <h1 class="room_names" id={{ room }}>Flask-SocketIO-Chat: {{ room }}</h1>
     <main class="mdl-layout__content" id="scrollerson">

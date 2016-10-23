@@ -35,6 +35,7 @@
                     console.log(data);
                   var msg = data.msg;
                   var name = data.name;
+                  var room = data.room;
                   var bigPapa = document.createElement("div");
 
                   bigPapa.className = "mdl-list__item";
@@ -58,11 +59,10 @@
                   messageContainer.appendChild(message);
 
                   bigPapa.appendChild(messageContainer);
-                  var itgoeshere = document.getElementById("hereitgoes");
+                  var itgoeshere = document.getElementById(room);
                   itgoeshere.appendChild(bigPapa);
 
 
-                    var room = data.room;
                     var chat_id = '#chat' + room;
                     $(chat_id).val($(chat_id).val() + data.msg + '\n');
                     $(chat_id).scrollTop($(chat_id)[0].scrollHeight);
@@ -110,8 +110,8 @@
         <span for="panic" class="mdl-tooltip">Panic Button Exits Chat Fast</span>
       </div>
     </header>
-    <div id="hereitgoes"></div>
     {%  for room in rooms %}
+    <div id={{room}}></div>
     <h1 class="room_names" id={{ room }}>Flask-SocketIO-Chat: {{ room }}</h1>
     <main class="mdl-layout__content" id="scrollerson">
     <messages class="mdl-grid" id ={{ chat_room|join}}>

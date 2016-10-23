@@ -212,7 +212,7 @@
 
             var form_grid = document.createElement('div');
             form_grid.setAttribute('class', 'mdl-grid');
-            //form_grid.setAttribute('action', none);
+            form_grid.setAttribute('id', 'form_grid');
 
             var text_holder = document.createElement('div');
             text_holder.setAttribute('class', "mdl-cell mdl-cell--11-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label");
@@ -248,7 +248,7 @@
         </script>
         {% endif %}
     <div id={{room}}></div>
-    <h1 style="visibility:hidden" class="room_names" id={{ room }}>Flask-SocketIO-Chat: {{ room }}</h1>
+    <h1 style="visibility:hidden;height:0;width:0;overflow:none;" class="room_names" id={{ room }}>Flask-SocketIO-Chat: {{ room }}</h1>
     <messages class="mdl-grid" id ={{ chat_room|join}}>
         <div class="mdl-list mdl-cell mdl-cell--12-col chat-container">
         </div>

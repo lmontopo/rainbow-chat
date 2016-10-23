@@ -296,6 +296,15 @@ Copyright (c) 2013 Daniel Eden
   }
 }
 
+#form_grid {
+  position: absolute;
+  bottom: 0;
+
+}
+
+.mdl-grid {
+  z-index: 10;
+}
 
 
 

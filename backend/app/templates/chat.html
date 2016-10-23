@@ -101,6 +101,7 @@
     </head>
 
   <body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <img class="logo grow" src="../static/rc-icon.png" alt="rainbow-chat-logo" id="logo">
@@ -113,20 +114,69 @@
           </button>
         </a>
         <span for="panic" class="mdl-tooltip">Panic Button Exits Chat Fast</span>
+          <!-- Tabs -->
+          <div class="mdl-layout__tab-bar mdl-js-ripple-effect" id="tab_link_container">
+
+          </div>
       </div>
     </header>
-    {%  for room in rooms %}
+
+    <main class="mdl-layout__content" id="tab_body_container">
+    </main>
+
+      {%  for room in rooms %}
+        {% if loop.index == 1 %}
+        <script>
+        // create tab link
+            var tab_link_container = document.getElementById("tab_link_container");
+            var tab_link = document.createElement("a");
+            var tab_href = "#scrool-tab-" + {{ loop.index }};
+            tab_link.setAttribute('href', tab_href);
+            tab_link.setAttribute('class', 'mdl-layout__tab is-active');
+            tab_link.innerHTML = {{ room }};
+            tab_link_container.appendChild(tab_link);
+        // create tab body
+            var tab_body_container = document.getElementById("tab_body_container");
+            var tab_body = document.createElement("section");
+            tab_body.setAttribute('class', "mdl-layout__tab-panel is-active");
+            tab_body.setAttribute('id', tab_href);
+            tab_body_container.appendChild(tab_body);
+        </script>
+        {%  else %}
+            <script>
+        // create tab link
+            var tab_link_container = document.getElementById("tab_link_container");
+            var tab_link = document.createElement("a");
+            var tab_href = "#scrool-tab-" + {{ loop.index }};
+            tab_link.setAttribute('href', tab_href);
+            tab_link.setAttribute('class', 'mdl-layout__tab');
+            tab_link.innerHTML = {{ room }};
+            tab_link_container.appendChild(tab_link);
+        // create tab body
+            var tab_body_container = document.getElementById("tab_body_container");
+            var tab_body = document.createElement("section");
+            tab_body.setAttribute('class', "mdl-layout__tab-panel");
+            tab_body.setAttribute('id', tab_href);
+            tab_body_container.appendChild(tab_body);
+
+        // fill body with tasty divs
+        </script>
+        {% endif %}
     <div id={{room}}></div>
     <h1 class="room_names" id={{ room }}>Flask-SocketIO-Chat: {{ room }}</h1>
-    <main class="mdl-layout__content" id="scrollerson">
     <messages class="mdl-grid" id ={{ chat_room|join}}>
         <div class="mdl-list mdl-cell mdl-cell--12-col chat-container">
         </div>
       </messages>
-    </main>   
 
       <input class="text" id={{ room }} size="80" placeholder="Enter your message here"><br><br>
       <a href="#" onclick="leave_room();">Leave this room</a>
+
     {%  endfor %}
+
+
+
+
+  </div>
   </body>
 </html>

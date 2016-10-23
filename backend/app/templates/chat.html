@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="GitLab Pages">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.amber-indigo.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+  <title>Rainbow.Chat</title>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            var socket;
+            $(document).ready(function(){
+                var room;
+                socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
+                socket.on('connect', function(data) {
+                    $('.room_names').each(function(){
+                        socket.emit('joined', {}, this.id);
+                    });
+                });
+                socket.on('status', function(data) {
+                  console.log('pickle', data);
+                    //$('#chat').val($('#chat').val() + '<' + data.msg + '>\n');
+                    //$('#chat').scrollTop($('#chat')[0].scrollHeight);
+                });
+                socket.on('message', function(data) {
+                    console.log('adoifuadscciofuaoisfuiodsauf')
+
+                    console.log(data);
+                    var room = data.room;
+                    var chat_id = '#chat' + room;
+                    $(chat_id).val($(chat_id).val() + data.msg + '\n');
+                    $(chat_id).scrollTop($(chat_id)[0].scrollHeight);
+                });
+                socket.on('room', function(data) {
+                    room = data.msg;
+                });
+                $('.text').keypress(function(e) {
+                    var rm = $(e.target)[0];
+                    var code = e.keyCode || e.which;
+                    if (code == 13) {
+                        console.log(rm);
+                        text = $(e.target).val();
+                        console.log(text)
+                        $(e.target).val('');
+                        socket.emit('text', {msg: text}, {room: rm.id});
+                    }
+                });
+            });
+            function leave_room() {
+                socket.emit('left', {}, function() {
+                    socket.disconnect();
+
+                    // go back to the login page
+                    window.location.href = "{{ url_for('main.index') }}";
+                });
+            }
+        </script>
+    </head>
+
+  <body>
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!--<img class="logo grow" src="images/full-res-logo.png" alt="rainbow-chat-logo" id="logo">-->
+        <img class="logo grow" src="http://raw.githubusercontent.com/lmontopo/pflag/feature/FML/full-res-logo.png"
+ alt="rainbow-chat-logo" id="logo">
+
+        <span class="mdl-layout-title">Welcome to Rainbow.Chat - Be kind</span>
+        <div class="mdl-layout-spacer"></div>
+        <a href="http://www.yahoo.com">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="panic">
+            Leave Site Now!
+          </button>
+        </a>
+        <span for="panic" class="mdl-tooltip">Panic Button Exits Chat Fast</span>
+      </div>
+    </header>
+    {%  for room in rooms %}
+    <h1 class="room_names" id={{ room }}>Flask-SocketIO-Chat: {{ room }}</h1>
+    <main class="mdl-layout__content" id="scrollerson">
+    <messages class="mdl-grid" id ={{ chat_room|join}}>
+      {% set chat_room = ["chat", room ] %}
+      <textarea id={{ chat_room|join }} cols="80" rows="20"></textarea><br><br>
+        <div class="mdl-list mdl-cell mdl-cell--12-col chat-container">
+          <div class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+              <i class="material-icons mdl-list__item-avatar">person</i>
+              <span>Pflag</span>
+            </span>
+            <div class="bubble">
+              <p>
+              How are you doing today? Is there anything in particular you want to talk about?
+              </p>
+            </div>
+          </div>
+          <div class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+              <div class="bubble bubble-alt">
+                <p> I want to tell my parents about who I really am, but I can never get it to come out right. I don't want them to hate me... </p>
+              </div>
+              <div class="mdl-layout-spacer"></div>
+              <span>Anon</span>
+              <i class="material-icons mdl-list__item-avatar">person</i>
+            </span>
+          </div>
+        </div>
+      </messages>
+    </main>   
+
+
+      {% set chat_room = ["chat", room ] %}
+      <textarea id={{ chat_room|join }} cols="80" rows="20"></textarea><br><br>
+
+      {% set text_room = ["text", room ] %}
+      <input class="text" id={{ room }} size="80" placeholder="Enter your message here"><br><br>
+      <a href="#" onclick="leave_room();">Leave this room</a>
+    {%  endfor %}
+  </body>
+</html>

@@ -141,6 +141,49 @@
             tab_body.setAttribute('class', "mdl-layout__tab-panel is-active");
             tab_body.setAttribute('id', tab_href);
             tab_body_container.appendChild(tab_body);
+
+            var input_field = document.createElement('input');
+            input_field.setAttribute('class', 'text mdl-textfield__input');
+            input_field.setAttribute('type', 'text');
+            input_field.setAttribute('id', {{ room }});
+
+        // fill body with tasty divs
+
+            var form_grid = document.createElement('div');
+            form_grid.setAttribute('class', 'mdl-grid');
+            //form_grid.setAttribute('action', none);
+
+            var text_holder = document.createElement('div');
+            text_holder.setAttribute('class', "mdl-cell mdl-cell--11-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label");
+
+            var input_label = document.createElement('label');
+            input_label.setAttribute('for', {{ room }});
+            input_label.setAttribute('class', "mdl-textfield__label");
+            input_label.innerHTML = "Enter a message...";
+
+            tab_body.appendChild(form_grid);
+            form_grid.appendChild(text_holder);
+            text_holder.appendChild(input_field);
+            text_holder.appendChild(input_label);
+
+            var icon = document.createElement('i');
+            icon.setAttribute('class', "material-icons");
+            icon.innerHTML = 'send';
+
+            var send_button = document.createElement('button');
+            send_button.setAttribute('class', "mdl-button mdl-button--fab mdl-button--accent mdl-js-button mdl-js-ripple-effect");
+
+            var button_div = document.createElement('div');
+            button_div.setAttribute('class', "mdl-cell mdl-cell--middle mdl-cell--stretch mdl-cell--1-col");
+
+            send_button.appendChild(icon);
+            button_div.appendChild(send_button);
+            form_grid.appendChild(button_div);
+
+
+
+
+
         </script>
         {%  else %}
             <script>
@@ -160,6 +203,48 @@
             tab_body_container.appendChild(tab_body);
 
         // fill body with tasty divs
+            var input_field = document.createElement('input');
+            input_field.setAttribute('class', 'text mdl-textfield__input');
+            input_field.setAttribute('type', 'text');
+            input_field.setAttribute('id', {{ room }});
+
+        // fill body with tasty divs
+
+            var form_grid = document.createElement('div');
+            form_grid.setAttribute('class', 'mdl-grid');
+            //form_grid.setAttribute('action', none);
+
+            var text_holder = document.createElement('div');
+            text_holder.setAttribute('class', "mdl-cell mdl-cell--11-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label");
+
+            var input_label = document.createElement('label');
+            input_label.setAttribute('for', {{ room }});
+            input_label.setAttribute('class', "mdl-textfield__label");
+            input_label.innerHTML = "Enter a message...";
+
+            tab_body.appendChild(form_grid);
+            form_grid.appendChild(text_holder);
+            text_holder.appendChild(input_field);
+            text_holder.appendChild(input_label);
+
+            var icon = document.createElement('i');
+            icon.setAttribute('class', "material-icons");
+            icon.innerHTML = 'send';
+
+            var send_button = document.createElement('button');
+            send_button.setAttribute('class', "mdl-button mdl-button--fab mdl-button--accent mdl-js-button mdl-js-ripple-effect");
+
+            var button_div = document.createElement('div');
+            button_div.setAttribute('class', "mdl-cell mdl-cell--middle mdl-cell--stretch mdl-cell--1-col");
+
+            send_button.appendChild(icon);
+            button_div.appendChild(send_button);
+            form_grid.appendChild(button_div);
+
+
+
+
+
         </script>
         {% endif %}
     <div id={{room}}></div>
@@ -169,13 +254,24 @@
         </div>
       </messages>
 
-      <input class="text" id={{ room }} size="80" placeholder="Enter your message here"><br><br>
-      <a href="#" onclick="leave_room();">Leave this room</a>
 
     {%  endfor %}
 
-
-
+{#        <div>#}
+{##}
+{#            <div class="mdl-grid" action="#">#}
+{#              <div class="mdl-cell mdl-cell--11-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">#}
+{#                <input class="mdl-textfield__input" type="text" id="chatmessage">#}
+{#                <label class="mdl-textfield__label" for="chatmessage">Enter a message...</label>#}
+{#              </div>#}
+{#              <div class="mdl-cell mdl-cell--middle mdl-cell--stretch mdl-cell--1-col">#}
+{#                <button class="mdl-button mdl-button--fab mdl-button--accent mdl-js-button mdl-js-ripple-effect">#}
+{#                  <i class="material-icons">send</i>#}
+{#                  <!-- <i class="material-icons">chat</i> also looks good, but defies convention a little. -->#}
+{#                </button>#}
+{#              </div>#}
+{#            </div>#}
+{#            </div>#}
 
   </div>
   </body>
